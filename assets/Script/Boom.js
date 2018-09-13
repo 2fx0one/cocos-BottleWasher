@@ -34,7 +34,11 @@ cc.Class({
     onLoad () {
         cc.log("xxxx")
         let animation = this.getComponent(cc.Animation);
-        animation.play("small");
+
+        let animationStates = animation.play("small");
+
+        animationStates.repeatCount = Infinity
+
     },
 
     start () {
