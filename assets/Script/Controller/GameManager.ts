@@ -31,11 +31,12 @@ export class GameManager extends cc.Component {
 
     onLoad () {
         this.gameModel = new GameModel();
-        this.gameModel.init(5);
+        this.gameModel.init(5); //准备游戏模型
 
         this.gridScript = this.grid.getComponent("GridView");
         this.gridScript.setController(this);
-        this.gridScript.initWithCellModels(this.gameModel.getCells());
+        this.gridScript.initWithCellModels(this.gameModel.getCells()); //在网格中初始化
+        cc.sys.openURL("https://www.qq.com");
     }
 
     start () {

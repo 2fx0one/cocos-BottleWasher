@@ -9,7 +9,7 @@
 //  - [English] http://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import CellModel from "../Model/CellModel";
-import {GRID_HEIGHT, GRID_WIDTH} from "../Model/Constant";
+import {GRID_ROW, GRID_COLUMN} from "../Model/Constant";
 import AudioUtils from "../Utils/AudioUtils";
 
 const {ccclass, property} = cc._decorator;
@@ -36,22 +36,28 @@ export default class GridView extends cc.Component {
 
     private controller;
     private cellViews;
+
     // onLoad () {}
 
-    start () {
+    start() {
 
     }
 
-    setController(controller){
+    setController(controller) {
         this.controller = controller;
     }
 
     initWithCellModels(cellsModels: [CellModel][CellModel]) {
+        // cc.log(cellsModels)
         this.cellViews = [];
-        for (let i = 1 ; i <= GRID_HEIGHT; i++) {
-            this.cellViews[i] = [];
-            for  (let j = 0; j < GRID_WIDTH; j++) {
-                let type = cellsModels[i][j].type
+        for (let y_row = 1; y_row <= GRID_ROW; y_row++) {
+            this.cellViews[y_row] = [];
+            for (let x_column = 1; x_column <= GRID_COLUMN; x_column++) {
+                // if (cellsModels[i][j] !== undefined) {
+                cc.log(x_column + " " + y_row)
+                cc.log(cellsModels[y_row][x_column])
+                let type = cellsModels[y_row][x_column].type
+                // }
                 // let animationView = cc.instantiate(this.an)
             }
 

@@ -1,5 +1,5 @@
 import CellModel from "./CellModel";
-import {CELL_TYPE, CELL_BASENUM, CELL_STATUS, GRID_WIDTH, GRID_HEIGHT, ANITIME} from "./Constant";
+import {CELL_TYPE, CELL_BASENUM, CELL_STATUS, GRID_COLUMN, GRID_ROW, ANITIME} from "./Constant";
 
 
 export default class GameModel {
@@ -12,10 +12,12 @@ export default class GameModel {
     init(cellTypeNum: number) {
         this.cells = [];
         this.setCellTypeNum(cellTypeNum || this.cellTypeNum);
-        for (let x_w = 1; x_w < GRID_WIDTH; x_w++) {
-            this.cells[x_w] = [];
-            for (let y_h = 1; y_h < GRID_HEIGHT; y_h++) {
-                this.cells[x_w][y_h] = new CellModel();
+        for (let y_row = 1; y_row <= GRID_ROW; y_row++) {
+            this.cells[y_row] = [];
+            for (let x_col = 1; x_col <= GRID_COLUMN; x_col++) {
+                let c: CellModel = new CellModel();
+                this.cells[y_row][x_col] = c.init(1, x_col, y_row);
+                // this.cells[x_col][y_row] = c;
             }
         }
     }

@@ -19,14 +19,14 @@ export const CELL_STATUS = {
     BIRD: "bird"
 }
 
-export const GRID_WIDTH = 9;
-export const GRID_HEIGHT = 9;
+export const GRID_COLUMN = 9;
+export const GRID_ROW = 9;
 
 export const CELL_WIDTH = 70;
 export const CELL_HEIGHT = 70;
 
-export const GRID_PIXEL_WIDTH = GRID_WIDTH * CELL_WIDTH;
-export const GRID_PIXEL_HEIGHT = GRID_HEIGHT * CELL_HEIGHT;
+export const GRID_PIXEL_WIDTH = GRID_COLUMN * CELL_WIDTH;
+export const GRID_PIXEL_HEIGHT = GRID_ROW * CELL_HEIGHT;
 
 
 // ********************   时间表  animation time **************************
